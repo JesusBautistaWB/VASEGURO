@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>Reportante</title>
+  <meta name="author" content="Jake Rocheleau">
+  <link rel="shortcut icon" href="http://static.tmimgcdn.com/img/favicon.ico">
+  <link rel="icon" href="http://static.tmimgcdn.com/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/switchery.min.css">
+  <script type="text/javascript" src="js/switchery.min.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+      <div class="limiter">
+		<div class="container-login100" style="background-image: url('../VistasVaseguro/loginVS/images/logbg.jpg');">
+  
+  <span class="login100-form-title">
+						REPORTAR ACCIDENTE / VA SEGURO / REPORTANTE
+					</span>
+  <form onsubmit="return false">
+  <div class="col-3">
+    <label>
+      Reportante, ¿Quien reporta?:
+          <br><br>   
+      <input placeholder="Apellido Paterno"  name="appPaRepor" onkeyup="javascript:this.value=this.value.toUpperCase();">
+      <input placeholder="Apellido Materno"  name="appMaRepor" onkeyup="javascript:this.value=this.value.toUpperCase();">
+      <input placeholder="Nombre(s)"  name="nombreRepor" onkeyup="javascript:this.value=this.value.toUpperCase();">
+         
+    </label>
+  </div> 
+    
+      
+      <div class="col-3">  
+    <label>
+      Origen de persona quien reporta:
+    
+      <br> <br> <br>  
+         <fieldset>
+  
+ <input type="radio" name="puestoReportante" value="Usuario Externo"><label style="color:#939393";  >Usuario externo (Director, docente, administrativo)</label>
+      <br>     <br>  <br> 
+   </fieldset>
+        <fieldset>
+  <input type="radio" name="puestoReportante" value="Aseguradora"><label style="color:#939393"; >Aseguradora</label>
+              
+        </fieldset>
+
+        </label> 
+  </div>
+  
+        
+       <div class="col-3">
+    <label>
+     Puesto: <br> <br> 
+      <input placeholder="¿Que puesto ocupa?"  name="puestoReportante"> <br> <br> <br> <br> 
+    </label>
+           
+  </div>
+      
+      
+ 
+  
+  <div class="col-2">
+    <label>
+      Correo Electronico:<br> <br> 
+      <input placeholder="¿Cual es el correo electronico del reportante?"  name="correpReportante">  
+    </label>
+  </div>
+      
+  <div class="col-2">
+    <label>
+
+Teléfono: <br> <br> 
+      <input placeholder=" Ingrese los 10 digitos"  name="telefonoReportante" ><br> 
+    </label>
+  </div>
+      
+      
+       <div class="col-3">
+    <label>
+      Descripción del Siniestro/Accidente: <br> <br> <br> <br> 
+      <input placeholder="Sin acentos y con MAYUSCULAS"  name="descReportante" onkeyup="javascript:this.value=this.value.toUpperCase();" > <br><br> 
+    </label>
+  </div>   
+      
+      <div class="col-3">
+    <label>
+     <label for="start">¿Cuando ocurrio el siniestro(Fecha)?<br> <br> <br> <br> </label>
+<input type="date"  name="fechaAccidenteReportante"><br><br> 
+    </label>
+  </div>   
+      
+      <div class="col-3">
+    <label>
+     <label for="start">¿Cuando ocurrio el siniestro(Hora)?<br> <br> <br> <br></label>
+<input type="time"  name="horaAccidenteReportante"><br> <br> 
+    </label>
+  </div>
+      
+
+  
+  <div class="col-submit">
+    <button class="submitbtn">Siguiente</button>
+  </div>
+  
+  </form>
+  </div>
+<script type="text/javascript">
+var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+elems.forEach(function(html) {
+  var switchery = new Switchery(html);
+});
+</script>
+</body>
+</html>

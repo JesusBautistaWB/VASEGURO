@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>Administracion VASEGURO</title>
+  <meta name="author" content="Jake Rocheleau">
+  <link rel="shortcut icon" href="http://static.tmimgcdn.com/img/favicon.ico">
+  <link rel="icon" href="http://static.tmimgcdn.com/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/switchery.min.css">
+  <script type="text/javascript" src="js/switchery.min.js"></script>
+      <script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+      <script type="text/javascript" src="js/sistema.js"></script>
+    
+    <script type="text/javascript">     
+        if((localStorage.getItem('sessionValue') == "")){
+            window.location= "../VistasVaseguro/loginVS/indexvaseguro.html" ;
+            
+        }
+    
+    </script>
+     
+</head>
+
+     
+    
+<body>
+     
+ <div class="header">
+  
+     
+    <p> <img src="../VistasVaseguro/loginVS/images/headersimg.png" height="80" width="900">  </p>
+</div>
+    
+    
+      <div id="wrapper">
+      <div class="limiter">
+    
+		<div class="container-login100" style="background-image: url('../VistasVaseguro/loginVS/images/fondo.png');">
+ 
+      
+       <div id="main-container">
+	<table border="1">
+	   
+		<tr>
+		     <thead>
+			<td>FOLIO ACCIDENTE</td>
+			<td>FOLIO ACCIDENTADO</td>
+			<td>FOLIO RESPONSABLE</td>
+			<td>USUARIO QUE REGISTRO</td>
+			<td>ID REGION DEL CUERPO AFECTADA</td>
+			<td>ID TIPO DE ACCIDENTE</td>
+            <td>ID RIESGO EXCLUIDO</td>
+			<td>ID ESCUELA</td>
+                 <TD>ID LUGAR ACCIDENTE</TD>
+                 <TD>ORIGEN REPORTANTE</TD>
+                 <TD>PUESTO REPORTANTE</TD>
+                 <TD>CORREO DEL REPORTANTE</TD>
+                 <TD>TELEFONO REPORTANTE</TD>
+			
+			</thead>
+		</tr>
+        
+        <?php      
+		$conexion = mysqli_connect('localHost','root','Q1w2e3r4.','vasegurobd');
+		$sql="SELECT * from vasegurobd.tb_accidentes ";
+		$result=mysqli_query($conexion,$sql);
+
+		while($mostrar=mysqli_fetch_array($result)){
+		 ?>
+
+		<tr>
+            <td><label><?php echo $mostrar['FolioAccidente'] ?></label></td>
+            <td><?php echo $mostrar['FolioAccidentado'] ?></td>
+			<td><?php echo $mostrar['FolioResponsableRes'] ?></td>
+			<td><?php echo $mostrar['idusuario'] ?></td>
+			<td><?php echo $mostrar['idRDCA'] ?></td>
+			<td><?php echo $mostrar['idTipoDeAccidente'] ?></td>
+			<td><?php echo $mostrar['idRiesgoEx'] ?></td>
+            <td><?php echo $mostrar['idEscuela'] ?></td>
+            <td><?php echo $mostrar['idLugarAccidente'] ?></td>
+            <td><?php echo $mostrar['origenReportante'] ?></td>
+            <td><?php echo $mostrar['puestoReportante'] ?></td>
+            <td><?php echo $mostrar['correoReportante'] ?></td>
+            <td><?php echo $mostrar['telefonoReportante'] ?></td>
+            <td></td>
+            <td></td>
+			<td><button><a href='modificarIncidenciaFormulario.php?idU="<?php echo $mostrar['FolioAccidente'] ?>"' method= "POST">  RESPONDER </a></button></td>
+            <td><button><a href='eliminarIncidenciaFunction.php?idUr="<?php echo $mostrar['FolioAccidente'] ?>"' method= "POST"> ELIMINAR </a></button></td>
+		</tr>
+	<?php 
+	}
+	 ?>
+ 
+ 
+
+  <div id="wrapper">
+      <div class="limiter">
+    
+		
+ 
+     
+
+  </div>
+        
+
+</body>
+       
+</html>
